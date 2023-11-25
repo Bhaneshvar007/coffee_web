@@ -1,0 +1,894 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+}
+
+#wraper {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+#mainContainer {
+    width: 80%;
+    height: 100vh;
+    position: relative;
+    background-image: url("CoffeImage/background 1.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 79%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    background-color: #7e7e7e6a;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+nav #logo {
+    font-size: 5vw;
+    color: rgb(114, 56, 14);
+    text-shadow: -1px 1px 1px white;
+    border-radius: 50%;
+    padding: .5vw;
+}
+
+nav .midNav {
+    display: flex;
+    gap: 1.8vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.midNav a {
+    font-size: 1.6vw;
+    letter-spacing: 1px;
+    color: aliceblue;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: color .4s;
+    position: relative;
+}
+
+.midNav a:nth-child(1) {
+    color: rgb(176, 78, 8);
+}
+
+.midNav a:hover {
+    color: rgb(176, 78, 8);
+}
+
+.midNav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2.2vw;
+    background-color: rgb(176, 78, 8);
+    height: 4px;
+    width: 0%;
+    transition: width .4s;
+}
+
+.midNav a:hover::before {
+    width: 100%;
+}
+
+.rightNav {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.searchIcon {
+    font-size: 2.5vw;
+}
+
+.DelevaryIcon {
+    font-size: 3vw;
+}
+
+.searchIcon:active,
+.DelevaryIcon:active {
+    scale: 1.05;
+}
+
+.serchBar {
+    position: fixed;
+    right: 11.2%;
+    top: 16.8%;
+    scale: 0;
+    transition: .2s;
+    z-index: 1;
+}
+
+.serchBar input {
+    height: 3vw;
+    width: 20vw;
+    padding: 0 1vw;
+    font-size: 1.2vw;
+    color: black;
+}
+
+.serchBar input::placeholder {
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+.delevarySection {
+    height: 25vw;
+    width: 20vw;
+    background-color: #e8e7e7d2;
+    color: black;
+    position: fixed;
+    right: 11.2%;
+    top: 16.8%;
+    transition: .2s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    padding: 0 1vw;
+    scale: 0;
+}
+
+.delevarySection h1 {
+    font-size: 3vw;
+    color: #222;
+}
+
+.item {
+    border: 1px solid black;
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+
+.item img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#MenuIcon {
+    font-size: 3vw;
+    rotate: 90deg;
+    display: none;
+}
+
+#CroseIcon {
+    font-size: 10vw;
+    color: #222;
+    margin-top: -10vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 3vw;
+    display: none;
+    z-index: 1;
+}
+
+
+.heroSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroSection h1 {
+    font-size: 5vw;
+    text-transform: uppercase;
+    width: 70%;
+}
+
+.heroSection h1 span {
+    color: rgb(218, 96, 9);
+}
+
+.heroSection p {
+    font-style: 1.2vw;
+    width: 50%;
+    letter-spacing: 1px;
+}
+
+.heroSection button {
+    height: 2.8vw;
+    width: 10vw;
+    margin-top: 2vw;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgba(211, 143, 94, 0.816);
+    color: aliceblue;
+    font-size: 1vw;
+}
+
+.heroSection button:hover {
+    background-color: rgb(218, 96, 9);
+}
+
+.heroSection button:active {
+    scale: 1.02;
+}
+
+.aboutSection {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+    margin: 2vw 0;
+    border: 1px solid gray;
+}
+
+#head {
+    font-size: 6vw;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#head span {
+    color: rgb(218, 96, 9);
+}
+
+.aboutbody {
+    display: flex;
+    gap: 2vw;
+    text-transform: capitalize;
+    background-color: rgb(18, 18, 18);
+}
+
+.aboutLeft img {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+}
+
+.aboutRight h2 {
+    font-size: 2.5vw;
+    margin-top: 1vw;
+}
+
+.aboutRight p {
+    width: 90%;
+    margin: 1vw 0;
+}
+
+.aboutRight button {
+    background-color: #fff;
+    padding: .8vw 1.5vw;
+    color: black;
+    font-weight: bold;
+    margin-top: 1vw;
+    cursor: pointer;
+}
+
+.aboutRight button:hover {
+    background-color: rgb(218, 218, 218);
+    text-decoration: underline;
+}
+
+.aboutRight button:active {
+    scale: 1.02;
+}
+
+#menuSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vw;
+    border: 1px solid gray;
+}
+
+.menuBody {
+    display: grid;
+    gap: 1.5vw;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.menucard {
+    height: 280px;
+    aspect-ratio: 1/1;
+    background-color: black;
+    border: 1px solid rgba(117, 117, 117, 0.651);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    color: #efebebf7;
+    transition: .5s;
+    margin: 1vw 0;
+}
+
+.menucard h1 {
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menucard p {
+    font-size: 2vw;
+}
+
+.menucard p span {
+    font-size: 1.5vw;
+    text-decoration: line-through;
+}
+
+.menucard img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.menucard button {
+    padding: .7vw 1.2vw;
+    color: aliceblue;
+    text-transform: capitalize;
+    font-weight: bold;
+    background-color: rgba(211, 136, 82, 0.816);
+}
+
+.menucard:hover {
+    background-color: #fff;
+    color: black;
+    scale: 1.02;
+}
+
+#productSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    margin-top: 2vw;
+    border: 1px solid gray;
+}
+
+.productbody {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 2vw;
+}
+
+.productcard {
+    height: 380px;
+    width: 280px;
+    border: 1px solid rgba(117, 117, 117, 0.651);
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.productcard img {
+    height: 200px;
+    width: 220px;
+    border: 1px solid black;
+}
+
+.ptop {
+    display: flex;
+    gap: 2vw;
+    margin: 1vw 0;
+}
+
+.ptop p {
+    border: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ptop p:hover {
+    background-color: rgba(211, 136, 82, 0.816);
+}
+
+.pbottom {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pbottom p {
+    font-size: 1.5vw;
+}
+
+.pbottom button {
+    padding: .6vw 2vw;
+    margin: 1vw;
+    background-color: rgba(211, 136, 82, 0.816);
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.productcard:hover {
+    background-color: #fff;
+    color: black;
+    scale: 1.02;
+}
+
+.productcard:hover .ptop p {
+    border-color: black;
+}
+
+#reviewSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    border: 1px solid gray;
+    margin: 2vw 0;
+}
+
+.reviewBody {
+    display: flex;
+    gap: 2vw;
+
+}
+
+.reviewCard {
+    height: 380px;
+    width: 280px;
+    border: 1px solid rgba(117, 117, 117, 0.651);
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    margin: 1vw 0;
+}
+
+.reviewCard img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.reviewCard h1 {
+    font-size: 10vw;
+    margin-top: -5vw;
+    color: rgb(176, 78, 8);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.reviewCard p {
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+.reviewCard:hover {
+    background-color: #fff;
+    color: black;
+    scale: 1.02;
+}
+
+#contectSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    padding: 2vw;
+    border: 1px solid gray;
+}
+
+.contectBody {
+    display: flex;
+    width: 80%;
+    height: 60%;
+    background-color: rgb(25, 25, 25);
+    border: 1px solid gray;
+}
+
+.contectBody img {
+    height: 100%;
+    width: 50%;
+}
+
+.contectRight {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    gap: 1vw;
+}
+
+.contectRight h1 {
+    font-size: 3vw;
+    text-transform: capitalize;
+}
+
+.contectRight input {
+    padding: .7vw 1.5vw;
+    border-radius: 5px;
+    width: 20vw;
+    border: 1px solid white;
+}
+
+.contectRight input::placeholder {
+    color: #111;
+}
+
+.contectRight button {
+    padding: 1vw 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 2vw;
+}
+
+.contectRight button:hover {
+    background-color: #e4e4e4ab;
+}
+
+#blogSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    margin: 2vw;
+    padding: 2vw;
+    border: 1px solid gray;
+}
+
+.blogBody {
+    display: flex;
+    gap: 2vw;
+}
+
+.blogCard {
+    height: 30vw;
+    width: 22vw;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    transition: .5s;
+}
+
+.blogCard h1 {
+    text-transform: capitalize;
+    font-size: 1.6vw;
+    margin: 0vw 1vw;
+}
+
+.blogCard h4 {
+    text-transform: capitalize;
+    margin: 1vw;
+    color: rgba(211, 136, 82, 0.816);
+}
+
+.blogCard p {
+    text-transform: capitalize;
+    margin: 0 1vw;
+}
+
+.blogCard button {
+    height: 2.5vw;
+    width: 10vw;
+    margin: 1vw;
+    background-color: rgba(211, 136, 82, 0.816);
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.blogCard img {
+    height: 50%;
+    width: 100%;
+    margin-bottom: 1vw;
+}
+
+.blogCard:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+.footerSection {
+    background-color: #262626;
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 1vw;
+    text-transform: capitalize;
+}
+
+.footerNav {
+    display: flex;
+    gap: 2vw;
+    flex-wrap: wrap;
+}
+
+.footerNav a {
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: bold;
+    color: white;
+    border: 1px solid gray;
+    padding: 8px 18px;
+    transition: .5s;
+}
+
+.footerNav a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.footerSection p {
+    font-size: 1.5vw;
+    user-select: none;
+}
+
+.footerSection p span {
+    font-weight: bold;
+    color: rgba(211, 143, 94, 0.816);
+}
+
+
+/* Responsive From the mobile user. */
+
+@media (max-width:500px) {
+
+    #mainContainer {
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        height: 80px;
+    }
+
+    #MenuIcon {
+        display: block;
+        font-size: 10vw;
+        margin: 2vw;
+        z-index: 1;
+    }
+
+    nav .midNav {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #fff;
+        height: 70vh;
+        width: 80%;
+        position: absolute;
+        right: 0;
+        top: 0%;
+    }
+
+    nav .midNav a {
+        color: black;
+        font-size: 6vw;
+        margin: 3vw;
+    }
+
+    nav .midNav a:hover::before {
+        width: 0%;
+    }
+
+    nav #logo {
+        font-size: 15vw;
+    }
+
+    nav .rightNav {
+        display: none;
+    }
+
+    .heroSection {
+        height: 100vh;
+        padding: 0 3vw;
+    }
+
+    .heroSection h1 {
+        font-size: 10vw;
+        width: 100%;
+        margin-top: -20vw;
+    }
+
+    .heroSection p {
+        width: 100%;
+        margin: 3vw 0;
+    }
+
+    .heroSection button {
+        height: 10vw;
+        width: 30vw;
+        font-size: 3vw;
+    }
+
+    #head {
+        font-size: 10vw;
+        margin-top: 3vw;
+    }
+
+    .aboutSection {
+        height: 135vh;
+        /* padding: 2vw 0; */
+    }
+
+    .aboutbody {
+        flex-direction: column;
+        padding: 0 5vw;
+        height: 100%;
+    }
+
+    .aboutRight h2 {
+        font-size: 8vw;
+    }
+
+    .aboutRight p {
+        font-size: 4vw;
+        width: 100%;
+    }
+
+    .aboutRight button {
+        padding: 3vw 5vw;
+    }
+
+    .aboutLeft img {
+        height: 220px;
+        width: 100%;
+    }
+
+    .menuBody {
+        flex-direction: column;
+        grid-template-columns: repeat(1, auto);
+        padding: 2vw 0;
+        gap: 5vw;
+    }
+
+    .menucard {
+        width: 80vw;
+    }
+
+    .menucard p {
+        font-size: 8vw;
+    }
+
+    .menucard img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .menucard p span {
+        font-size: 6vw;
+    }
+
+    .menucard button {
+        padding: 2.5vw 5vw;
+        margin-top: 3vw;
+    }
+
+    .productbody {
+        flex-direction: column;
+        gap: 5vw;
+        padding: 3vw 0;
+    }
+
+    .productcard {
+        width: 85vw;
+    }
+
+    .productcard p {
+        font-size: 6vw;
+    }
+
+    .productcard button {
+        padding: 3vw 8vw;
+        margin: 2vw 0;
+    }
+
+    .reviewBody {
+        flex-direction: column;
+        margin: 2vw 0;
+    }
+
+    .reviewCard {
+        width: 80vw;
+        padding: 0 2vw;
+    }
+
+    .reviewCard h1 {
+        font-size: 20vw;
+    }
+
+    .reviewCard p {
+        font-size: 5vw;
+    }
+
+    .contectBody {
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .contectBody img {
+        width: 100%;
+        height: 40%;
+    }
+
+    .contectRight {
+        height: 60%;
+        gap: 3vw;
+    }
+
+    .contectRight h1 {
+        font-size: 10vw;
+    }
+
+    .contectRight input {
+        width: 100%;
+        padding: 2vw;
+    }
+
+    .contectRight button {
+        padding: 3vw 8vw;
+    }
+
+    #blogSection {
+        height: 200vh;
+    }
+
+    .blogBody {
+        flex-direction: column;
+    }
+
+    .blogCard {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    .blogCard h1 {
+        font-size: 5vw;
+    }
+
+    .blogCard button {
+        height: 10vw;
+        width: 50%;
+        margin: 2vw;
+    }
+
+    .footerSection {
+        height: 15vh;
+    }
+
+    .footerSection p {
+        font-size: 5.6vw;
+        text-align: center;
+        width: 90%;
+    }
+
+    .footerNav {
+        display: none;
+    }
+
+}
